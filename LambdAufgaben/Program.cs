@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 namespace LambdAufgaben    
 {
     public delegate long PotenzMaker(int faktor, int potenz);
+    public delegate int Fabbelnaschi(int zahl);
 
     class Program
     {
         PotenzMaker viagra; //Klassenvariable
+        Fabbelnaschi fabbi;
 
         static void Main(string[] args)
         {
@@ -38,12 +40,25 @@ namespace LambdAufgaben
         }
         public void Fibunacci()
         {
-            
-       
-        
+            /*
+             int
+                 zahl = 10;
+            */
+             List<int> liste = new List<int> { 0, 1} ; // copy from https://trainyourprogrammer.de/csharp-28-ausgabe-der-fibonacci-folge.html
+            // Ein Textbuffer gedoense
+
+            /*
+            for (int i = 2; i < zahl; i++)
+             {
+                 liste.Add(liste[i - 1] + liste[i - 2]);
+             }
+             foreach (var item in liste)
+             {
+                 Console.WriteLine("{0} ",item);
+             }
+             */
 
         }
-
     }
 
 }
