@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace LambdAufgaben    
 {
-    public delegate long potenzMaker(int faktor, int potenz);
+    public delegate long PotenzMaker(int faktor, int potenz);
 
     class Program
     {
-        // Potenz
+        PotenzMaker viagra; //Klassenvariable
 
-        //public static int potenz(int faktor, int potenz)
+        static void Main(string[] args)
+        {
+            Program app = new Program();
+            // app.Potenz();
+            app.Fibunacci();
+        }
+        public void Potenz()
+        {
+        //        public static int Popotenz(int faktor, int potenz)
         //{
         //    int x = faktor;
         //    for (int i = 1; i <= potenz - 1; i++)
@@ -21,14 +29,24 @@ namespace LambdAufgaben
         //    }
         //    return x;
         //}
-        //Console.WriteLine(potenz(2,3));
+        //Console.WriteLine(Popotenz(2,3));
+                     
+            viagra = (faktor, potenz) => potenz == 0 ? 1 : potenz == 1 ? faktor : faktor * viagra(faktor, potenz - 1);
 
-        static void Main(string[] args)
+            Console.WriteLine(viagra(2, 3));            
+        }
+        public void Fibunacci()
         {
-            potenzMaker viagra;
-            viagra = (faktor, potenz) => potenz == 0 ? faktor = 1 : faktor * viagra(2, 3);
+            int
+                zahl = 6,
+                zahl2 = 0;
+            for(int i=1; i<zahl; i++)
+            {
+                zahl2 += i;
+            }
+            Console.WriteLine(zahl2);
 
-            Console.WriteLine(viagra(2,3));
         }
     }
+
 }
