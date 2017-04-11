@@ -17,6 +17,7 @@ namespace LambdAufgaben
             Program app = new Program();
             // app.Potenz();
             app.Fibunacci();
+
         }
         public void Potenz()
         {
@@ -37,16 +38,12 @@ namespace LambdAufgaben
         }
         public void Fibunacci()
         {
-            int
-                zahl = 6,
-                zahl2 = 0;
-            for(int i=1; i<zahl; i++)
-            {
-                zahl2 += i;
-            }
-            Console.WriteLine(zahl2);
+            
+       
+        
 
         }
+
     }
 
 }
