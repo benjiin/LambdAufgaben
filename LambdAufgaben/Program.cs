@@ -8,17 +8,25 @@ namespace LambdAufgaben
 {
     public delegate long PotenzMaker(int faktor, int potenz);
     public delegate int Fabbelnaschi(int zahl);
+    public delegate string SmallerHandler(string input, char pivot);
+    public delegate string BiggerHandler(string input, char pivot);
+    public delegate string QuicksortHandler(string input);
+
 
     class Program
     {
         PotenzMaker viagra; //Klassenvariable
         Fabbelnaschi fabbi;
+        static SmallerHandler smaller;
+        static BiggerHandler bigger;
+        static QuicksortHandler quicksort;
 
         static void Main(string[] args)
         {
             Program app = new Program();
             // app.Potenz();
-            app.Fibunacci();
+            //app.Fibunacci();
+            app.Quicksort();
 
         }
         public void Potenz()
@@ -61,9 +69,14 @@ namespace LambdAufgaben
             
             Console.WriteLine(fabbi(6));
             Console.ReadKey();
-             
-             
-
+        }
+        public void Quicksort()
+        {
+            smaller = (input, pivot) => input == "" ? "" : input[0] <= pivot ? input[0] + smaller(input.Substring(1), pivot) : smaller(input.Substring(1), pivot);
+            bigger = (input, pivot) => input == "" ? "" : input[0] > pivot ? input[0] + bigger(input.Substring(1), pivot) : bigger(input.Substring(1), pivot);
+            quicksort = input => input == "" ? "" : quicksort(smaller(input.Substring(1), input[0])) + input[0] + quicksort(bigger(input.Substring(1), input[0]));
+            Console.WriteLine(quicksort("23879203223879203286250239842387920328625023984238792032862502398423879203286250239842387920328625023984238792032862502398423879203286250239848625023984"));
+            Console.ReadLine();
         }
     }
 
