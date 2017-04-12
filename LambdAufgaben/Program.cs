@@ -40,23 +40,29 @@ namespace LambdAufgaben
         }
         public void Fibunacci()
         {
-            /*
-             int
-                 zahl = 10;
-            */
-             List<int> liste = new List<int> { 0, 1} ; // copy from https://trainyourprogrammer.de/csharp-28-ausgabe-der-fibonacci-folge.html
-            // Ein Textbuffer gedoense
 
-            /*
-            for (int i = 2; i < zahl; i++)
-             {
-                 liste.Add(liste[i - 1] + liste[i - 2]);
-             }
-             foreach (var item in liste)
-             {
-                 Console.WriteLine("{0} ",item);
-             }
-             */
+            // int
+            //     zahl = 33;
+
+            //List<int> liste = new List<int> { 0, 1} ; // copy from https://trainyourprogrammer.de/csharp-28-ausgabe-der-fibonacci-folge.html
+            //// Ein Textbuffer gedoense
+
+
+            //for (int i = 2; i < zahl; i++)
+            // {
+            //     liste.Add(liste[i - 1] + liste[i - 2]);
+            // }
+            // foreach (var item in liste)
+            // {
+            //     Console.WriteLine("{0} ",item);
+            // }
+
+            fabbi = (zahl) => zahl == 0 ? 0 : zahl == 1 ? 1 : fabbi(zahl - 2) + fabbi(zahl - 1);
+            
+            Console.WriteLine(fabbi(6));
+            Console.ReadKey();
+             
+             
 
         }
     }
